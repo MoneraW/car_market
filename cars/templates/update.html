@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url 'car-update' car_id=car_obj.id %}" method = "POST">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Make</label>
+          <input name="make" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+        <div class="form-group">
+             <label for="exampleFormControlInput1">Model</label>
+             <input name="model" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Car Model">
+             </div>
+        
+        <div class="form-group">
+             <label for="exampleFormControlInput1">Year</label>
+             <input name="year" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Year it was made">
+             </div>
+        
+         <div class="custom-file">
+             <input type="file" class="custom-file-input" id="customFile">
+             <label name="car_img" class="custom-file-label" for="customFile">Choose Image</label>
+             </div>
+   
+                {% csrf_token %}
+                
+
+                <button input type="submit" value="Update" class="btn btn-primary">Update</button>
+      </form>
+
+{% endblock content %}
+
